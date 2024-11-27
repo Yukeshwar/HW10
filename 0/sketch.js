@@ -4,7 +4,7 @@ let amplitude;
 let angleOffset = 0;
 
 function preload() {
-  song = loadSound('PartA.mp3'); // Ensure the correct file path
+  song = loadSound('PartA.mp3'); 
 }
 
 function setup() {
@@ -23,7 +23,7 @@ function draw() {
 
   translate(width / 2, height / 2);
 
-  // Central Glowing Circle
+  // Central Circle
   for (let r = 200; r > 0; r -= 10) {
     let gradientColor = lerpColor(color('#ff007f'), color('#00ffff'), r / 200);
     fill(gradientColor);
@@ -31,7 +31,7 @@ function draw() {
     ellipse(0, 0, vol * 300 + r);
   }
 
-  // Dynamic Waves Around the Circle
+  // Waves Around the Circle
   noFill();
   strokeWeight(2);
   for (let i = 0; i < spectrum.length; i += 10) {
@@ -47,10 +47,10 @@ function draw() {
     let col = lerpColor(color('#ff007f'), color('#33ccff'), amp / 256);
     stroke(col);
     bezier(
-      cos(i) * 200, sin(i) * 200, // Start point
-      x1, y1,                     // Control point 1
-      x2, y2,                     // Control point 2
-      cos(i + 15) * 200, sin(i + 15) * 200 // End point
+      cos(i) * 200, sin(i) * 200, 
+      x1, y1,                     
+      x2, y2,                     
+      cos(i + 15) * 200, sin(i + 15) * 200 
     );
   }
 
@@ -58,7 +58,7 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight); // Adjust canvas when the window resizes
+  resizeCanvas(windowWidth, windowHeight); 
 }
 
 function mousePressed() {
