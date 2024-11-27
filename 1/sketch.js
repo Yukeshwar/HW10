@@ -94,7 +94,7 @@ function drawPosterText() {
 
   fill(200);
   textSize(24);
-  text("Album Art Inspired Design", width / 2, height / 6 + 50);
+  text("Album Art ", width / 2, height / 6 + 50);
 
   pop();
 }
